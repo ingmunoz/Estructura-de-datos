@@ -12,6 +12,8 @@ namespace lista
         static void Main(string[] args)
         {
             List<string> listanombres = new List<string>(); // crear lista vacias
+            string nombres;
+            string posicion = " ";
 
             //Agregar Elementos en una lista vacia
            listanombres .Add("Jonathan");
@@ -26,6 +28,25 @@ namespace lista
                     {
                 Console.WriteLine (listanombres [contador]);
             }
+
+            // pedir al usuario digite un nombre de la lista 
+            Console.WriteLine("Ingrese el nombre de la lista que busca: ");
+            nombres = Console.ReadLine();// leyendo los datos que digito el usuario
+            for (int i = 0; i<listanombres.Count(); i++) //recorrer la lista y hacer un conteo
+            {
+                if (listanombres[i]==nombres)// preguntando si existe el nombre que usuario digito
+                {
+                    for (int a = 0; a<listanombres.Count(); a++)
+                    {
+                        if (listanombres[a] == nombres)
+                        {
+                            posicion = posicion + " " + (a+1);
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("el nombre que busca esta en la posicion: {0} ",posicion);
+            Console.WriteLine("el nombre que busca esta en la posicion: " + listanombres.IndexOf("Amelia"));
             Console.ReadKey ();
         }
     }
