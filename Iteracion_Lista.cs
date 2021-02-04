@@ -32,7 +32,10 @@ namespace lista
             listanombres.Insert(2, "Chantal");
 
             // eliminar el primer elemento de una lista
-            listanombres.RemoveAt(0);
+            listanombres.Remove("Andres");
+
+             //Eliminar un elemento dada la posicion
+            listanombres.RemoveAt(3);
 
             //recorer la lista y hacer un contador
             for (int contador = 0; contador < listanombres.Count (); contador++)  
@@ -59,6 +62,7 @@ namespace lista
                 }
             }
             Console.WriteLine("el nombre que busca esta en la posicion: {0} ",posicion);
+                                                            //metodo para buscar un elemento en el indixe
             Console.WriteLine("el nombre que busca esta en la posicion: " + listanombres.IndexOf("Amelia"));
             Console.ReadKey ();
         }
