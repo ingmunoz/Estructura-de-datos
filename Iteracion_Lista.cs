@@ -24,6 +24,17 @@ namespace lista
              // Agregar elemento en la primera posicion
             listanombres.Insert (0, "Andres");
 
+            // recorrer la lista e imprimir en pantalla
+            foreach (string listname in listanombres)
+            {
+                Console.WriteLine(listname);
+            }
+            
+            Console.WriteLine("....................................");
+            Console.WriteLine("lista despues de agregar y eliminar elemento");
+            Console.WriteLine(".....................................");
+           
+
              /*Insertar un elemento en la ultima posicion de una lista
              Elemento insertado en la posicion 5 porque la lista constaba de 4 elementos */
              listanombres.Insert(5, "Nicoll"); 
@@ -32,17 +43,19 @@ namespace lista
             listanombres.Insert(2, "Chantal");
 
             // eliminar el primer elemento de una lista
-            listanombres.Remove("Andres");
+            listanombres.RemoveRange(0,1);
 
              //Eliminar un elemento dada la posicion
             listanombres.RemoveAt(3);
 
-            //recorer la lista y hacer un contador
-            for (int contador = 0; contador < listanombres.Count (); contador++)  
-            {
-                Console.WriteLine (listanombres [contador]);
-            }
+            // Eliminar elemento dado de una lista
+            listanombres.Remove("Pedro");
 
+            // Recorrer e imprimir lista despues de agregar y eliminar
+            foreach(string listname in listanombres)
+            {
+                Console.WriteLine(listname);
+            }
             // pedir al usuario digite un nombre de la lista 
             Console.WriteLine("Ingrese el nombre de la lista que busca: ");
 
@@ -58,8 +71,10 @@ namespace lista
                         {
                             posicion = posicion + " " + (a+1);
                         }
+                       
                     }
                 }
+                
             }
             Console.WriteLine("el nombre que busca esta en la posicion: {0} ",posicion);
                                                             //metodo para buscar un elemento en el indixe
